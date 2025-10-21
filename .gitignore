@@ -1,0 +1,20 @@
+# Executables
+*.exe
+*.out
+
+# Model files
+models/
+
+# Object files
+*.o
+*.obj
+
+# IDE files
+.vscode/
+.vs/
+*.suo
+*.user
+
+# OS files
+.DS_Store
+Thumbs.db
