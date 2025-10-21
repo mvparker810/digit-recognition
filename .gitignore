@@ -2,8 +2,6 @@
 *.exe
 *.out
 
-# Model files
-models/
 
 # Object files
 *.o

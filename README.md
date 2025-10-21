@@ -6,12 +6,10 @@ A console-based neural network application for handwritten digit recognition usi
 
 - Interactive menu system for training, testing, and prediction
 - Custom neural network architecture with configurable hidden layers
-- Model serialization (save/load trained networks as .mdl files)
+- Model serialization
 - Train on MNIST CSV dataset
 - Test accuracy on validation set
-- Test random samples from dataset with visualization
-- Predict digits from BMP images
-- Real-time training progress bar
+- Predict digits from user .bmp images
 - Confidence scores with visual probability bars
 
 ## Compilation
@@ -39,7 +37,7 @@ data/mnist_train.csv
 data/mnist_test.csv
 ```
 
-If you'd like to replace them with your own dataset, make sure they follow the CSV format below.
+If you'd like to replace them with your own dataset, make sure they take the same name, and that they follow the CSV format below.
 
 ### CSV Format
 - First column: label (0-9)
@@ -49,40 +47,6 @@ If you'd like to replace them with your own dataset, make sure they follow the C
 ### Where to Get MNIST Data
 The MNIST dataset in CSV format can be downloaded from various sources online. Each row should contain one digit sample with 785 values total (1 label + 784 pixels). The training set typically contains 60,000 samples and the test set contains 10,000 samples.
 
-## Menu Options
-
-1. **New Network** - Create a new neural network
-   - Input layer: 784 neurons (fixed, 28x28 image)
-   - Hidden layers: customizable (recommended: 2 layers of 128, 64 neurons)
-   - Output layer: 10 neurons (fixed, digits 0-9)
-   - Recommended epochs: 10-20
-   - Recommended learning rate: 0.1
-   - Recommended batch size: 32
-
-2. **Load Network** - Load a previously saved model from the `models` folder
-
-3. **Train Network** - Train the current network on MNIST training data
-   - Displays progress bar during training
-   - Auto-saves model after training
-
-4. **Test Network** - Evaluate accuracy on MNIST test set
-
-5. **Test Random Sample** - View a random example from the test set
-   - Shows ASCII visualization of the digit
-   - Displays prediction vs actual label
-   - Shows confidence scores for all digits
-   - Option to reload and test the same image again
-
-6. **Make Prediction** - Predict a digit from a BMP image
-   - Reads from an image in the project root
-   - Auto-resizes to 28x28 pixels for processing
-   - Shows ASCII visualization of what the network sees
-   - Displays confidence scores for all digits
-
-7. **Save Network** - Manually save the current model to the `models` folder
-
-8. **Exit** - Quit the application
-
 ## Creating Test Images
 
 To test with custom images:
@@ -91,14 +55,11 @@ To test with custom images:
 2. Draw your digit with:
    - White foreground (the digit itself)
    - Black background
-3. Any size is supported (will be resized to 28x28)
+3. The size doesn't (will be resized to 28x28)
 
 ## Model Files
 
-Trained models are saved in the `models` folder with `.mdl` extension. These files contain:
-- Network architecture (layer sizes)
-- All weights and biases
-- Binary format for fast loading
+Trained models are saved in the `models` folder with `.mdl` extension.
 
 ## Expected Performance
 
