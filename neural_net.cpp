@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include "neural_net.h"
 #include <iostream>
 #include <fstream>
@@ -143,7 +144,6 @@ void NeuralNet::backpropagate(const std::vector<double>& input, const std::vecto
     }
 }
 
-// ==================== DATA AUGMENTATION FUNCTIONS ====================
 
 std::vector<double> NeuralNet::rotateImage(const std::vector<double>& image, double angleDeg) {
     std::vector<double> rotated(784, 0.0);
@@ -341,7 +341,6 @@ std::vector<double> NeuralNet::augmentImage(const std::vector<double>& image, st
     return augmented;
 }
 
-// ==================== END DATA AUGMENTATION ====================
 
 void NeuralNet::train(
     const std::vector<std::vector<double>>& trainImages,
@@ -353,10 +352,9 @@ void NeuralNet::train(
     int numSamples = trainImages.size();
     int numClasses = layerSizes_.back();
 
-    std::cout << "\nStarting training WITH DATA AUGMENTATION..." << std::endl;
+    std::cout << "\nStarting training..." << std::endl;
     std::cout << "Epochs: " << epochs << ", Learning Rate: " << learningRate << ", Batch Size: " << batchSize << std::endl;
     std::cout << "Training samples: " << numSamples << std::endl;
-    std::cout << "Augmentation: Rotation, Translation, Scaling, Noise, Elastic Deformation" << std::endl;
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -376,7 +374,6 @@ void NeuralNet::train(
             int idx = indices[batch];
             std::vector<double> target = oneHot(trainLabels[idx], numClasses);
 
-            // Apply data augmentation to training image
             std::vector<double> augmentedImage = augmentImage(trainImages[idx], gen);
 
             backpropagate(augmentedImage, target, learningRate);

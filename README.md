@@ -77,12 +77,15 @@ With recommended settings (2 hidden layers of 128 and 64 neurons, 10 epochs):
 - **Optimization**: Minibatch gradient descent with backpropagation
 - **Weight initialization**: Xavier initialization
 - **Input normalization**: Pixels scaled to [0, 1]
+- **Data augmentation**: Real-time augmentation during training to combat domain shift
 
 ## Sources
 
 - **Neural Networks**: 3Blue1Brown - [Neural Networks Series](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
 - **But what is a neural netowrk?**: 3Blue1Brown - [But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk)
+- **How to Create a Neural Network**: Sebastian Lague - [How to Create a Neural Network (and Train it to Identify Doodles)](https://www.youtube.com/watch?v=hfMk-kjRv4c&t=2365s)
 - **MNIST Dataset**: LeCun, Y., Cortes, C., & Burges, C. (1998). [The MNIST database of handwritten digits](http://yann.lecun.com/exdb/mnist/).
 - **Cross-Entropy Loss**: [Cross entropy on Wikipedia](https://en.wikipedia.org/wiki/Cross_entropy) - Used for multi-class classification problems with softmax output.
+
 
 

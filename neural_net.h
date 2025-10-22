@@ -47,7 +47,6 @@ private:
     void initializeWeights();
     void backpropagate(const std::vector<double>& input, const std::vector<double>& target, double learningRate);
 
-    // Data augmentation functions
     std::vector<double> augmentImage(const std::vector<double>& image, std::mt19937& gen);
     std::vector<double> rotateImage(const std::vector<double>& image, double angleDeg);
     std::vector<double> translateImage(const std::vector<double>& image, int dx, int dy);
